@@ -52,10 +52,14 @@ class model
 		return $run;
 	}
 
-	/* function select_join2($tbl1,$tbl2,$on){
+	function select_join2($tbl1,$tbl2,$on){
 		$sel="select * from $tbl1 join $tbl2 on $on";
 		$run=$this->conn->query($sel);
-	} */
+		while($fetch=$run->fetch_object()){
+			$arr[] = $fetch;
+		}
+		return $arr;
+	}
 	function select_where_join($tbl1,$tbl2,$on,$arr)
 	{
 		$sel = "select * from $tbl1 join $tbl2 on $on where 1=1";
@@ -63,13 +67,13 @@ class model
 		$arr_key = array_keys($arr);
 		$arr_value = array_values($arr);
 		foreach($arr as $w){
-				$sel.=" and $arr_key[$i] = '$arr_value[$i]'";
+			$sel .= " and $arr_key[$i] = '$arr_value[$i]'";
 				$i++;
 		}
 		$run=$this->conn->query($sel);
 		return $run;
 	}
-	function update($tbl, $data, $arr)
+	function update($tbl, $data, $where)
 	{
 		$upd = "update $tbl set";
 		$i = 0;
@@ -77,10 +81,10 @@ class model
 		$arr_value = array_values($data);
 		$count = count($data);
 		foreach ($data as $d) {
-			if ($count == i + 1) {
-				$upd .= "$arr_key[$i]='$arr_value[$i]'";
+			if ($count == $i + 1) {
+				$upd .= " $arr_key[$i]='$arr_value[$i]'";
 			} else {
-				$upd .= "$arr_key[$i]='$arr_value[$i]',";
+				$upd .= " $arr_key[$i]='$arr_value[$i]',";
 				$i++;
 			}
 		}
@@ -90,7 +94,7 @@ class model
 		$warr_value = array_values($where);
 
 		foreach ($where as $d) {
-			$upd .= "and $warr_key[$j]='$warr_value[$j]'";
+			$upd .= " and $warr_key[$j]='$warr_value[$j]'";
 			$j++;
 		}
 		$run = $this->conn->query($upd);
@@ -99,12 +103,12 @@ class model
 
 	function delete($tbl,$where){
 		$del="delete from $tbl where 1=1";
-		$i=0;
+		$j=0;
 		$arr_key = array_keys($where);
 		$arr_value = array_values($where);
 		foreach($where as $d){
-			$del .= "and $arr_key[$j]='$arr_value[$j]'";
-			$i++;
+			$del .= " and $arr_key[$j]='$arr_value[$j]'";
+			$j++;
 		}
 		$run=$this->conn->query($del);
 		return $run;

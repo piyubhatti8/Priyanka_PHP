@@ -111,22 +111,24 @@ class control extends model   // step 2
                     $uid = $_REQUEST['btnedit'];
                     $where = array("uid"=>$uid);
                     $run = $this->select_where('user',$where);
+                    //print_r($run);
                     $fetch = $run->fetch_object();
-
-                    if(isset($_REQUEST['submit'])){
+                    
+                    if(isset($_REQUEST['submit']))
+				    {
                         $name = $_REQUEST['name'];
                         $unm = $_REQUEST['unm'];
                         $mobile = $_REQUEST['mobile'];
                         $gen = $_REQUEST['gen'];
                         $lang = $_REQUEST['lang'];
-                        $lang = implod(",",$lang);
+                        $lang = implode(",",$lang);
                         $cid = $_REQUEST['cid'];
                         if($_FILES['file']['size']>0){
                             $file = $_FILES['file']['name'];
                             $path = "images/upload/customer/".$file;
                             $tmp_file=$_FILES['file']['tmp_name'];
                             move_uploaded_file($tmp_file, $path);
-                            $data = array("name"=>$name,"unm"=>$unm,"mobile"=>$mobile,"unm"=>$unm,"gen"=>$gen,"lang"=>$lang,"cid"=>$cid,"file"=>$file);
+                            $data = array("name"=>$name,"unm"=>$unm,"mobile"=>$mobile,"gen"=>$gen,"lang"=>$lang,"cid"=>$cid,"file"=>$file);
                             $old_file = $fetch->file;
                             $res = $this->update('user',$data,$where);
                             if($res){
@@ -143,7 +145,7 @@ class control extends model   // step 2
                             }
                         }
                         else {
-                            $data = array("name"=>$name,"unm"=>$unm,"mobile"=>$mobile,"unm"=>$unm,"gen"=>$gen,"lang"=>$lang,"cid"=>$cid);
+                            $data = array("name"=>$name,"unm"=>$unm,"mobile"=>$mobile,"gen"=>$gen,"lang"=>$lang,"cid"=>$cid);
                             $old_file = $fetch->file;
                             $res = $this->update('user',$data,$where);
                             if($res){
@@ -159,11 +161,14 @@ class control extends model   // step 2
                                 </script>";
                             }
                         }
+                        
 
 
                         
                     }
+                    
                 }
+            
                 include_once('edituser.php');
                 break;        
            /* case '/':

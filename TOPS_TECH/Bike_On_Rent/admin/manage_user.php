@@ -5,14 +5,14 @@ include_once('header.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">MANAGE USER</h4>
+                <h4 class="header-  line">MANAGE USER</h4>
                 
                             </div>
 
         </div>
       
              <div class="row">
-                 <div class="col-md-12 col-sm-12 col-xs-12">
+                 <div class="col-md-12 col-sm-12 col-xs-12 ">
                <div class="panel panel-primary">
                         <div class="panel-heading">
                           Manage User
@@ -23,64 +23,49 @@ include_once('header.php');
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead>
                 <tr>
-                    <th>Customer ID</th>
+                    <th>Image/file</th>
+                    <th>User ID</th>
                     <th>Full Name</th>
+                    <th>Mobile</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>Mobile</th>
-                    <th>Adhar Number</th>
-                    <th>Driving Number</th>
-                    <th>Address</th>
-                    <th>Pincode</th>
-                    <th>Created Date</th>
-                    <th>Updated Date</th>
+                    <th>Gender</th>
+                    <th>Language</th>
+                    <th>Cid</th>
+                    <th>Country</th>                    
+                    <th>Status</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
+                <?php if (!empty($user_arr)) {
+                    foreach ($user_arr as $data)
+                    {
+                ?>
+                
                 <tr class="odd gradeX">
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td class="center">X</td>
+                <td><img src="../website/images/upload/customer/<?php echo $data->file?>" width="50px" height="50px"></td>
+                    <td class="center"><?php echo $data->uid?></td>
+                    <td><?php echo $data->name?></td>
+                    <td><?php echo $data->mobile?></td>
+                    <td><?php echo $data->unm?></td>
+                    <td><?php echo $data->pass?></td>
+                    <td><?php echo $data->gen?></td>
+                    <td><?php echo $data->lang?></td>
+                    <td><?php echo $data->cid?></td>
+                   <td class="center"><?php echo $data->country ?></td>
+                   <td><?php echo $data->status?></td>
                     <td><a href="#" class="btn btn-primary">Edit</a></td>
                     <td><a href="#" class="btn btn-danger">Delete</a></td>
 
                 </tr>
-                <tr class="even gradeC">
-                <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td class="center">X</td>
-                </tr>
-                <tr class="odd gradeA">
-                <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                    <td class="center">X</td>
-                </tr>
+                <?php 
+                  }
+                }
+                ?>
+            
+              
                                               
             </tbody>
         </table>

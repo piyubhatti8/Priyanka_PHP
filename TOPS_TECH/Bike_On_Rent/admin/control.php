@@ -90,6 +90,9 @@ class control extends model   // step 2
                 include_once('manage_employee.php');
                 break;
             case '/manage_user':
+                //$user_arr = $this->select('user');
+               $user_arr = $this->select_join2('user','country_tbl','user.cid=country_tbl.cid');
+                
                 include_once('manage_user.php');
                 break;
 

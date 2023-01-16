@@ -22,7 +22,7 @@ include_once('header.php');
 
 </head>
 <body>
-    <form action="#" enctype="multipart/form-data" method="post">
+    <form action="" enctype="multipart/form-data" method="post">
 <div class="container">
         <div class="row">   
             <div class="col-md-4">
@@ -54,7 +54,7 @@ include_once('header.php');
                 </div>
                 
                 <div class="row mt-2">
-                    <?php if ($fetch->gen = "Female") {
+                    <?php if ($fetch->gen =="Female") {
                         ?>
                     <div class="col-md-12"><label class="lable">Gender</label>
                         <input type="radio" class="form-control-inline" name="gen" placeholder="" value="Male">Male
@@ -75,10 +75,10 @@ include_once('header.php');
                 </div>
             <div class="col-md-5 mt-5">
               <div class="row mt-2 p-5x">
-              <?php
+                <?php
 					$lang=$fetch->lang;
 					$lang_arr=explode(",",$lang);
-					?>
+				?>
                       <label class="lable">Language</label>
                       <input type="checkbox" class="form-control-inline" name="lang[]" value="English"
                       <?php if (in_array("English", $lang_arr)) {
@@ -133,7 +133,7 @@ include_once('header.php');
                   <div class="row mt-2 p-2">
                     <div class=" col-md-12">
                     <label for="password" class="text-black">Upload profile <span class="text-danger">*</span></label>
-					          <input type="file" class="form-control" id="c_lname" name="file">
+					          <input type="file" class="form-control" id="c_lname" name="file" value="">
                   </div>
                 </div>
                 
@@ -147,7 +147,7 @@ include_once('header.php');
       
 </div>
 <div class="row mt-2">
-                    <div class="col-md-12 text-center"><button type="button" class="btn btn-primary" name="Submit">Save Profile</div>
+                    <div class="col-md-12 text-center"><input type="submit" class="btn btn-primary" value="Save Profile" name="submit"></div>
                 </div>
    </div>
    </form>  
