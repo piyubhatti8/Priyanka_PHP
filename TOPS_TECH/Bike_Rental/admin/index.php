@@ -2,22 +2,11 @@
 include_once('header.php');
 ?>
 
-<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
 
-<script src="jquery.bvalidator.js" type="text/javascript"></script>
-<link href="bvalidator.css" type="text/css" rel="stylesheet" />
-
-<script type="text/javascript"> 
-    $(document).ready(function () {
-	
-        $('#frm_login').bValidator();
-    });
-	</script> 
-</head>
     <div class="content-wrapper">
          <div class="container">
 
-         <form id="frm_login" action="" enctype="" method="post" >
+         <form id="form" action="" enctype="" method="post" >
         <div class="row pad-botm">
             <div class="col-md-12">
                 
@@ -55,3 +44,14 @@ include_once('header.php');
 <?php
 include_once('footer.php');
 ?>
+<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+
+<script src="jquery.bvalidator.js" type="text/javascript"></script>
+<link href="bvalidator.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form').bValidator();
+    });
+	</script> 

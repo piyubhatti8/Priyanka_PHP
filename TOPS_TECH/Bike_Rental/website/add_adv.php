@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ROYAL BIKES - Bike Rental Website</title>
+    <title>Bike On Rent</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -125,10 +125,10 @@ include_once('searchbar.php');
 							</div>
                             <div class="form-group">
 								<label>Created Date/Time</label>
-								<input class="form-control" type="datetime" name="created_dt"/>
+								<input class="form-control" type="datetime-local" name="created_dt"/>
 							</div><div class="form-group">
 								<label>Updated Date/Time</label>
-								<input class="form-control" type="datetime" name="updated_dt"/>
+								<input class="form-control" type="datetime-local" name="updated_dt"/>
 							</div>
          
 								 <div class="form-group">

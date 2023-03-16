@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ROYAL BIKES - Bike Rental Website</title>
+    <title>Bike On Rent</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -50,7 +50,7 @@ include_once('topbar.php');
 
 
 <body>
-    <form id="signup" enctype="multipart/form-data" method="post">
+    <form id="form" enctype="multipart/form-data" method="post">
     <div class="site-section">
       <div class="container">
         <div class="row">
@@ -75,18 +75,18 @@ include_once('topbar.php');
 				<div class="form-group row">
                   <div class="col-md-6">
                     <label for="Email" class="text-black">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" id="c_fname" name="unm">
+                    <input type="email" class="form-control" id="c_fname" name="unm" data-bvalidator="required,email">
                   </div>
                   <div class="col-md-6">
                     <label for="password" class="text-black">Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" id="c_lname" name="pass">
+                    <input type="password" class="form-control" id="c_lname" name="pass" data-bvalidator="required,minlength[4],maxlength[8]">
                   </div>
                 </div>
 				<div class="form-group row">
                   <div class="col-md-6">
                     <label for="name" class="text-black">Gender <span class="text-danger">*</span></label>
 					<div class="form-check">
-					  <input type="radio" class="form-check-input" id="radio1" name="gen" value="Male" >Male
+					  <input type="radio" class="form-check-input" id="radio1" name="gen" value="Male">Male
 					  <label class="form-check-label" for="radio1"></label>
 					</div>
 					<div class="form-check">
@@ -128,7 +128,7 @@ include_once('topbar.php');
 				  </div>
 				  <div class="col-md-6">
 					<label for="password" class="text-black">Upload profile <span class="text-danger">*</span></label>
-					<input type="file" class="form-control" id="c_lname" name="file">
+					<input type="file" class="form-control" id="c_lname" name="file" data-bvalidator="required">
 				  </div>
 					
                 </div>
@@ -153,5 +153,21 @@ include_once('topbar.php');
 <?php
 include_once('footer.php');
 ?>
+<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+
+<script src="jquery.bvalidator.js" type="text/javascript"></script>
+<link href="bvalidator.css" type="text/css" rel="stylesheet" />
+
+ 
+
+<!-- add script & call FORM id -->
+
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form').bValidator();
+    });
+	</script> 
 
 

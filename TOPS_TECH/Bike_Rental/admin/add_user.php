@@ -83,3 +83,21 @@ if (empty($_SESSION['admin_id'])) {
  <?php
  include_once('footer.php');
  ?> 
+ <script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+ 
+ <script src="jquery.bvalidator.js" type="text/javascript"></script>
+ <link href="bvalidator.css" type="text/css" rel="stylesheet" />
+ 
+  
+ 
+ <!-- add script & call FORM id -->
+
+ 
+ <script type="text/javascript"> 
+     $(document).ready(function () {
+     
+         $('#form').bValidator();
+     });
+    
+     </script> 
+ <script>

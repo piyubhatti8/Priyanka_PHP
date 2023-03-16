@@ -79,6 +79,8 @@ class control extends model   // step 2
                         else {
                             echo "<script>
                             alert('Your account has been blocked');
+                            window.location='logout';
+                            window.location='login';
                             echo </script>";
                         }
                         
@@ -207,7 +209,32 @@ class control extends model   // step 2
                 include_once('.php');
                 break;
                      
-             */   
+             */
+			 case '/about':
+                include_once('about.php');
+                break;
+			 case '/booking':
+                include_once('booking.php');
+                break;
+			case '/contact':
+                include_once('contact.php');
+                break;
+			case '/detail':
+                include_once('detail.php');
+                break;
+			case '/service':
+                include_once('service.php');
+                break;
+			case '/team':
+                include_once('team.php');
+                break;
+			case '/testimonial':
+                include_once('testimonial.php');
+                break;
+			case '/bike':
+                include_once('bike.php');
+                break;
+		
             }
     }
 

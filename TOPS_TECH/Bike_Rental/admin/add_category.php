@@ -1,7 +1,12 @@
 <?php
 include_once('header.php');
 if (empty($_SESSION['admin_id'])) {
-    include_once('index.php');
+?>
+echo"
+<script>
+    window.location='admin';
+    </script>";
+<?php
 }
 ?>
     <div class="content-wrapper">
@@ -13,7 +18,11 @@ if (empty($_SESSION['admin_id'])) {
                             </div>
 
         </div>
-      <form action="" enctype="multipart/form-data" name="" method="post">
+
+
+
+
+      <form name="cate_form" action="" enctype="multipart/form-data" id="form1" method="post">
              <div class="row">
                  <div class="col-md-12 col-sm-12 col-xs-12">
                <div class="panel panel-primary">
@@ -24,12 +33,12 @@ if (empty($_SESSION['admin_id'])) {
 						
 							 <div class="form-group">
 								<label>Category</label>
-								<input class="form-control" type="text" name="cate_name"/>
+								<input class="form-control" type="text" name="cate_name" data-bvalidator="required"/>
 								<p class="help-block">Help text here.</p>
 							</div>
                             <div class="form-group">
 								<label>Category Image</label>
-								<input class="form-control" type="file" name="cate_img"/>
+								<input class="form-control" type="file" name="cate_img" data-bvalidator="required"/>
 								<p class="help-block">Help text here.</p>
 							</div>
 							
@@ -50,3 +59,21 @@ if (empty($_SESSION['admin_id'])) {
  <?php
  include_once('footer.php');
  ?> 
+
+ 
+<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+
+<script src="jquery.bvalidator.js" type="text/javascript"></script>
+<link href="bvalidator.css" type="text/css" rel="stylesheet" />
+
+ 
+
+<!-- add script & call FORM id -->
+
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#cate_form').bValidator();
+    });
+</script> 

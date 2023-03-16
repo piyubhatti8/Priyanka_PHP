@@ -17,8 +17,18 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
+    <script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+	<script src="jquery.bvalidator.js" type="text/javascript"></script>
+	<link href="bvalidator.css" type="text/css" rel="stylesheet" />
 
+<script type="text/javascript"> 
+    $(document).ready(function () {
+        $('#form1').bValidator();
+    });
+	</script> 
 
+</head>
 <body>
     <div class="navbar navbar-inverse set-radius-zero" >
         <div class="container">

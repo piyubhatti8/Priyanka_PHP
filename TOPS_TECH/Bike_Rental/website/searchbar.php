@@ -32,10 +32,10 @@
             </div>
             <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                 <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Select A Car</option>
-                    <option value="1">Car 1</option>
-                    <option value="2">Car 1</option>
-                    <option value="3">Car 1</option>
+                    <option selected>Select A Bike</option>
+                    <option value="1">Bike 1</option>
+                    <option value="2">Bike 1</option>
+                    <option value="3">Bike 1</option>
                 </select>
             </div>
             <div class="col-xl-2 col-lg-4 col-md-6 px-2">

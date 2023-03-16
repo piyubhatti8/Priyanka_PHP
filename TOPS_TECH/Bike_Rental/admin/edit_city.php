@@ -13,7 +13,7 @@ if (empty($_SESSION['admin_id'])) {
                             </div>
 
         </div>
-        <form action="" enctype="multipart/form-data" name="" method="post">
+        <form id="form" action="" enctype="multipart/form-data" name="" method="post">
              <div class="row">
                  <div class="col-md-12 col-sm-12 col-xs-12">
                <div class="panel panel-primary">
@@ -24,13 +24,13 @@ if (empty($_SESSION['admin_id'])) {
 						
 							<div class="form-group">
 								<label>City Name</label>
-								<input class="form-control" type="text" name="city" value=<?php echo $fetch->city ?> />
+								<input class="form-control" type="text" name="city" data-bvalidator="required,alpha" value=<?php echo $fetch->city ?> />
 								<p class="help-block">Help text here.</p>
 							</div>
                             <div class="form-group">
                             <label>Select State</label>
-											<select class="form-control" id="" name="state_id">
-                                            <option>Select State</option>
+                            <select class="form-control" id="state_id" name="state_id" data-bvalidator="required">
+                                           <option value="">-------select---------</option>
                 
                                     <?php 
                                     foreach($state as $s)
@@ -71,3 +71,14 @@ if (empty($_SESSION['admin_id'])) {
  <?php
  include_once('footer.php');
  ?> 
+ <script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+ 
+ <script src="jquery.bvalidator.js" type="text/javascript"></script>
+ <link href="bvalidator.css" type="text/css" rel="stylesheet" />
+ <!-- add script & call FORM id -->
+ <script type="text/javascript"> 
+     $(document).ready(function () {
+     
+         $('#form').bValidator();
+     });
+     </script> 

@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ROYAL BIKES - Bike Rental Website</title>
+    <title>Bike On Rent</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -28,13 +28,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="jquery-2.1.3.min.js" type="text/javascript"></script>
-
-<script src="jquery.bvalidator.js" type="text/javascript"></script>
-<link href="bvalidator.css" type="text/css" rel="stylesheet" />
-
 
 
  
@@ -48,7 +41,7 @@ include_once('navbar.php');
 </head>
 
 <body>
-    <form action="" enctype="multipart/form-data" method="post">
+    <form id="form"action="" enctype="multipart/form-data" method="post">
 <div class="container">
         <div class="row">   
             <div class="col-md-4">
@@ -184,3 +177,20 @@ include_once('navbar.php');
     <?php
     include_once('footer.php');
     ?>
+    
+<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+
+<script src="jquery.bvalidator.js" type="text/javascript"></script>
+<link href="bvalidator.css" type="text/css" rel="stylesheet" />
+
+ 
+
+<!-- add script & call FORM id -->
+
+
+<script type="text/javascript"> 
+    $(document).ready(function () {
+	
+        $('#form').bValidator();
+    });
+	</script> 
