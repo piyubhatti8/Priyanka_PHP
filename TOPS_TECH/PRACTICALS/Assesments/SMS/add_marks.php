@@ -27,7 +27,7 @@ include_once('header.php');
 								<select name="sub" required>
                                     <option Value="">----------select----------</option>
                                     <option Value="Python">Python</option>
-                                    <option Value="PHP">PHP</option>
+                                    <option Value="PHP">Java</option>
                                     <option Value="C">C</option>
                                     <option Value="C++">C++</option>
                                 </select>
@@ -41,13 +41,7 @@ include_once('header.php');
                             </div>
                         </div>
                    </div>
-                   <?php
-                                        //--------------------------View Students---------------------
-                                        if (!empty($stud_arr)) {
-                                            foreach ($stud_arr as $data) {
-                                                ?>
-                               
-                               <div class="panel-body">
+                   <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
@@ -59,11 +53,19 @@ include_once('header.php');
 											<th>Subject</th>
                                             <th>Marks</th>
                                             <th>Fees</th>
-                                            <th>Delete</th>
+                                         
                                         </tr>
                                     </thead>
+                                  
+                   <?php   
+                  // print_r($stud_arr);
+                                     //--------------------------View Students---------------------
+                                    if (!empty($stud_arr)) {
+                                        while ($data = $stud_arr->fetch_object()) {                                    
+                                            ?>
+                              
                                     <tbody>
-                                       
+                                   
                                         <tr class="odd gradeX">                                        
                                             <td><?php echo $data->id ?></td>
                                             <td><?php echo $data->fname ?></td>
@@ -72,19 +74,19 @@ include_once('header.php');
                                             <td><?php echo $data->sub ?></td>
                                             <td><?php echo $data->marks ?></td>
                                             <td><?php echo $data->fees ?></td>
-                                           <!-- <td><a href="edit_student?student_editbtn=<?php echo $data->id ?>" class="btn btn-primary">Edit</a></td> -->
-                                            <td><a href="rmv_student?stud_rmvbtn=<?php echo $data->id ?>" class="btn btn-danger">Delete</a></td>
+                                     
                                         </tr>
                                                                 
                                     </tbody>
+                                    <?php
+                                            }
+                                        }
+                                           ?>      
                                 </table>
                             </div>
                             
                         </div>
-                        <?php
-                                            }
-                                        }
-                                           ?>      
+                     
 
         </div>
 </form>

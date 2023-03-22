@@ -251,7 +251,8 @@ case '/rmv_student':
                if(isset($_REQUEST['submit'])){
                   $sub=$_REQUEST['sub'];
                   $where=array("sub"=>$sub);
-                  $stud_arr=$this->select_where('students',$where);                
+                  $stud_arr=$this->select_where('students',$where);  
+             
                }
                include_once('add_marks.php');
                break;
