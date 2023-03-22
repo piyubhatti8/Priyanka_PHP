@@ -7,19 +7,56 @@ include_once('header.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage All Students</h4>
+                <h4 class="header-line">View Students</h4>
             </div>
                 <div class="right-div">
-                    <a href="counsellor" class="btn btn-danger pull-right">Back to Counsellor Menu</a>
+                    <a href="faculty" class="btn btn-danger pull-right">Back to Faculty Menu</a>
                 </div>
 
         </div>
+        <form id="form" action="" enctype="multipart/form-data" name="" method="post">
+             <div class="row">
+                 <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           Select your subject
+                        </div>
+                        <div class="panel-body">
+		
+                        <div class="form-group">
+								<label>Subject</label>
+								<select name="sub" required>
+                                    <option Value="">----------select----------</option>
+                                    <option Value="Python">Python</option>
+                                    <option Value="PHP">PHP</option>
+                                    <option Value="C">C</option>
+                                    <option Value="C++">C++</option>
+                                </select>
+							</div>
+                           
+								 <div class="form-group">
+									
+									<input type="submit" class="btn btn-primary" name="submit" Value="Submit"/>
+									
+								</div>
+                            </div>
+                        </div>
+                   </div>
+
+        </div>
+</form>
+                                    <?php
+                                  print_r($stud_arr);
+                                        //--------------------------View Students---------------------
+                                        if (!empty($stud_arr)) {
+                                            foreach ($stud_arr as $data) {
+                                                ?>
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        Manage All Students
+                        Students who has registered in course <?php echo $data->sub ?>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -30,27 +67,20 @@ include_once('header.php');
                                             <th>Firstname</th>                                        
 											<th>Lastname</th>
                                             <th>Mobile</th>                                        
-											<th>Subject</th>
                                             <th>Marks</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>Fees</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        //--------------------------View Students---------------------
-                                        if (!empty($stud_arr)) {
-                                            foreach ($stud_arr as $data) {
-                                                ?>
+                                       
                                         <tr class="odd gradeX">                                        
                                             <td><?php echo $data->id ?></td>
                                             <td><?php echo $data->fname ?></td>
                                             <td><?php echo $data->lname ?></td>
                                             <td><?php echo $data->mob ?></td>
-                                            <td><?php echo $data->sub ?></td>
                                             <td><?php echo $data->marks ?></td>
-                                            <td><a href="edit_student?student_editbtn=<?php echo $data->id ?>" class="btn btn-primary">Edit</a></td>
-                                            <td><a href="rmv_student?stud_rmvbtn=<?php echo $data->id ?>" class="btn btn-danger">Delete</a></td>
+                                            <td><?php echo $data->fees ?></td>
+                                           
                                         </tr>
                                            <?php
                                             }

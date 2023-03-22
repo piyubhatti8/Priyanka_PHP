@@ -11,6 +11,7 @@ include_once('header.php');
             <div class="col-md-12">
                 <h4 class="header-line">ADD STUDENT</h4>
             </div>
+            
                 <div class="right-div">
                     <a href="counsellor" class="btn btn-danger pull-right">Back to Counsellor Menu</a>
                 </div>
@@ -27,17 +28,17 @@ include_once('header.php');
 							 <div class="form-group">
 								<label>Student ID</label>
 								<input class="form-control" type="text" name="id" placeholder="Student ID will be generated automatically" required disabled>
-								<p class="help-block">Help text here.</p>
+								
 							</div>
                             <div class="form-group">
 								<label>First Name</label>
 								<input class="form-control" type="text" name="fname" required/>
-								<p class="help-block">Help text here.</p>
+								
 							</div>
                             <div class="form-group">
 								<label>Last Name</label>
 								<input class="form-control" type="text" name="lname" required/>
-								<p class="help-block">Help text here.</p>
+								
 							</div>
                             <div class="form-group">
 								<label>Mobile</label>
@@ -56,6 +57,9 @@ include_once('header.php');
                             <div class="form-group">
 								<label>Marks</label>
 								<input class="form-control" type="number" name="marks" required/>
+							</div>
+                            <div class="form-group">
+								<label>Fees will be added automatically.....</label>
 							</div>
          
 								 <div class="form-group">

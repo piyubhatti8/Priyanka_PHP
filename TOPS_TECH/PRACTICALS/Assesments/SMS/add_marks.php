@@ -9,7 +9,9 @@ include_once('header.php');
 
                 <h4 class="header-line">View Specific Student</h4>
             </div>
-
+            <div class="right-div">
+                    <a href="counsellor" class="btn btn-danger pull-right">Back to Counsellor Menu</a>
+                </div>
         </div>
         <form id="form1" action="" enctype="multipart/form-data" name="" method="post" onsubmit="return validate_form()">
              <div class="row">
@@ -20,11 +22,15 @@ include_once('header.php');
                         </div>
                         <div class="panel-body">
 		
-							 <div class="form-group">
-								<label>Enter Student ID</label>
-								<input class="form-control" type="text" name="id"/>
-                                <p class="help-block">Enter Student ID....</p>
-								
+                        <div class="form-group">
+								<label>Subject</label>
+								<select name="sub" required>
+                                    <option Value="">----------select----------</option>
+                                    <option Value="Python">Python</option>
+                                    <option Value="PHP">PHP</option>
+                                    <option Value="C">C</option>
+                                    <option Value="C++">C++</option>
+                                </select>
 							</div>
                            
 								 <div class="form-group">
@@ -35,7 +41,13 @@ include_once('header.php');
                             </div>
                         </div>
                    </div>
-                   <div class="panel-body">
+                   <?php
+                                        //--------------------------View Students---------------------
+                                        if (!empty($stud_arr)) {
+                                            foreach ($stud_arr as $data) {
+                                                ?>
+                               
+                               <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
@@ -46,37 +58,33 @@ include_once('header.php');
                                             <th>Mobile</th>                                        
 											<th>Subject</th>
                                             <th>Marks</th>
-                                            <th>Edit</th>
+                                            <th>Fees</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                       // print_r($stud_arr);
-                                        //--------------------------View Students---------------------
-                                      if(!empty($fetch)){
-                                                ?>
-                                        <tr class="odd gradeX">                                        
-                                            <td><?php echo $fetch->id ?></td>
-                                            <td><?php echo $fetch->fname ?></td>
-                                            <td><?php echo $fetch->lname ?></td>
-                                            <td><?php echo $fetch->mob ?></td>
-                                            <td><?php echo $fetch->sub ?></td>
-                                            <td><?php echo $fetch->marks ?></td>
-                                            <td><a href="edit_student?student_editbtn=<?php echo $fetch->id ?>" class="btn btn-primary">Edit</a></td>
-                                            <td><a href="rmv_student?stud_rmvbtn=<?php echo $fetch->id ?>" class="btn btn-danger">Delete</a></td>
-                                        </tr>
-                                           <?php
-                                        
-                                      }
-                                        
                                        
-                                           ?>                               
+                                        <tr class="odd gradeX">                                        
+                                            <td><?php echo $data->id ?></td>
+                                            <td><?php echo $data->fname ?></td>
+                                            <td><?php echo $data->lname ?></td>
+                                            <td><?php echo $data->mob ?></td>
+                                            <td><?php echo $data->sub ?></td>
+                                            <td><?php echo $data->marks ?></td>
+                                            <td><?php echo $data->fees ?></td>
+                                           <!-- <td><a href="edit_student?student_editbtn=<?php echo $data->id ?>" class="btn btn-primary">Edit</a></td> -->
+                                            <td><a href="rmv_student?stud_rmvbtn=<?php echo $data->id ?>" class="btn btn-danger">Delete</a></td>
+                                        </tr>
+                                                                
                                     </tbody>
                                 </table>
                             </div>
                             
                         </div>
+                        <?php
+                                            }
+                                        }
+                                           ?>      
 
         </div>
 </form>
@@ -86,8 +94,8 @@ include_once('header.php');
 <!-- -------------------------------------------------Start Java Script Validation----------------------------------------- -->
 <script> 
     function validate_form(){
-        var id=document.forms["form1"]["id"].value;
-        if (isNaN(id)){
+        var id=document.forms["form1"]["sub"].value;
+        if (sub=="" || sub==null){
             alert('Plaese enter numder in Student ID...');
             return false;
         }
