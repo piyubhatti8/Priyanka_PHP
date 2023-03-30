@@ -334,7 +334,7 @@ class control extends model   // step 2
 
                         $cate_img=$_FILES['cate_img']['name'];
                         $path='../website/images/upload/customer/'.$cate_img;
-                        $tmp_file=$_FILES['cate_img']['tmp_name'];
+						$tmp_file=$_FILES['cate_img']['tmp_name'];
                         move_uploaded_file($tmp_file,$path);
 
                     $data=array("cate_name"=>$cate_name,"cate_img"=>$cate_img);

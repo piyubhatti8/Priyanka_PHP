@@ -1,7 +1,7 @@
 ﻿<?php
 include_once('header.php');
 if (empty($_SESSION['admin_id'])) {
-    include_once('index.php');
+    include_once('dashboard.php');
 }
 ?>
     <div class="content-wrapper">

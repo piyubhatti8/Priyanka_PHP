@@ -12,8 +12,8 @@ class control extends model   // step 2
 		
 		switch($url)
 		{
-            case '/index':
-                include_once('index.php');
+            case '/dashboard':
+                include_once('dashboard.php');
                 break;
             
             case '/signup':
@@ -73,7 +73,7 @@ class control extends model   // step 2
                             $_SESSION['name'] = $fetch->name;
                             echo "<script>
                             alert('Login Success');
-                            window.location='index';
+                            window.location='dashboard';
                             echo </script>";
                         } 
                         else {
@@ -104,7 +104,7 @@ class control extends model   // step 2
                     unset ($_SESSION['name']);
                 echo "<script>
                     alert('You have been logged out..');
-                    window.location='index';
+                    window.location='dashboard';
                     </script>";
                     break;
             case '/profile':
@@ -190,7 +190,7 @@ class control extends model   // step 2
                     if($res){
                         echo "<script>
                         alert('Thank You...Your feedback has been sent');
-                        window.location=index;
+                        window.location=dashboard;
                         </script>";
                     }
                     else {

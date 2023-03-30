@@ -1,7 +1,7 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
-        <div class="position-relative px-lg-5" style="z-index: 9;">
+        <div class="position-relative px-lg-5" style="z-dashboard: 9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                 <a href="" class="navbar-brand">
                     <h1 class="text-uppercase text-primary mb-1">Rent A Bike</h1>
@@ -11,7 +11,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index" class="nav-item nav-link active">Home</a>
+                        <a href="dashboard" class="nav-item nav-link active">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
                         <a href="service" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">

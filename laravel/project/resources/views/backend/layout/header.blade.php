@@ -64,8 +64,8 @@
 
                   
                      <li class="">
-                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Products</span></a>
-                        <ul class="collapse list-unstyled" id="additional_page">
+                        <a href="#product" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Products</span></a>
+                        <ul class="collapse list-unstyled" id="product">
                            <li>
                               <a href="">> <span>Add Products</span></a>
                            </li>
@@ -76,8 +76,8 @@
                         </ul>
                      </li>
                      <li class="active">
-                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Categories</span></a>
-                        <ul class="collapse list-unstyled" id="additional_page">
+                        <a href="#category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Categories</span></a>
+                        <ul class="collapse list-unstyled" id="category">
                            <li>
                               <a href="">> <span>Add Categories</span></a>
                            </li>
@@ -88,8 +88,8 @@
                         </ul>
                      </li>
                      <li class="">
-                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Types</span></a>
-                        <ul class="collapse list-unstyled" id="additional_page">
+                        <a href="#type" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Types</span></a>
+                        <ul class="collapse list-unstyled" id="type">
                            <li>
                               <a href="">> <span>Add Types</span></a>
                            </li>
@@ -100,8 +100,8 @@
                         </ul>
                      </li>
                      <li class="">
-                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Sub Types</span></a>
-                        <ul class="collapse list-unstyled" id="additional_page">
+                        <a href="#subtype" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table purple_color2"></i> <span>Sub Types</span></a>
+                        <ul class="collapse list-unstyled" id="subtype">
                            <li>
                               <a href="">> <span>Add Sub Types</span></a>
                            </li>

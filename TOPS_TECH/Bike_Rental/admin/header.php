@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index">
+                <a class="navbar-brand" href="dashboard">
 
                     <img src="assets/img/logo.png" />
                 </a>
@@ -74,7 +74,7 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                       <!-- <li><a href="index.php" class="menu-top-active">DASHBOARD</a></li> -->
+                       <!-- <li><a href="dashboard.php" class="menu-top-active">DASHBOARD</a></li> -->
 
                             <li><a href="dashboard" class="menu-top">DASHBOARD</a></li>
                            
