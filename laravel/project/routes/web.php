@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\adminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,17 +45,7 @@ Route::get('/detail', function () {
     return view('frontend.detail');
 });
 
-
-
-Route::get('/index', function () {
-    return view('frontend.index');
-});
 //-------------------------------------------------------Admin Routes--------------------------------------------------------------------------------
-
-
-Route::get('/admin', function () {
-    return view('backend.dashboard');
-});
 
 Route::get('/admin_header', function () {
     return view('backend.layout.header');
@@ -72,9 +62,12 @@ Route::get('/contact', function () {
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
 });
-Route::get('/login', function () {
-    return view('backend.login');
-});
+
+Route::get('/login', [adminController::class,'index']);
+Route::post('/adminlogin', [adminController::class,'chk_login']);
+Route::get('/logout', [adminController::class,'logout']);
+
+
 Route::get('/profile', function () {
     return view('backend.profile');
 });

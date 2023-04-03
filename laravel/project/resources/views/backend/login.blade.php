@@ -46,24 +46,21 @@
                      </div>
                   </div>
                   <div class="login_form">
-                     <form>
+                     <form action="{{url('/adminlogin')}}" method="POST">
+                        @csrf
                         <fieldset>
                            <div class="field">
                               <label class="label_field">Email Address</label>
-                              <input type="email" name="email" placeholder="E-mail" />
+                              <input type="email" name="anm" placeholder="E-mail" />
                            </div>
                            <div class="field">
                               <label class="label_field">Password</label>
-                              <input type="password" name="password" placeholder="Password" />
+                              <input type="password" name="apass" placeholder="Password" />
                            </div>
-                           <div class="field">
-                              <label class="label_field hidden">hidden label</label>
-                              <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
-                              <a class="forgot" href="">Forgotten Password?</a>
-                           </div>
+                          
                            <div class="field margin_0">
                               <label class="label_field hidden">hidden label</label>
-                              <button class="main_bt">Sing In</button>
+                              <input type="submit" name="submit" value="login" class="main_bt">
                            </div>
                         </fieldset>
                      </form>

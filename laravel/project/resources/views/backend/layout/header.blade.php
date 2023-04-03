@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -185,7 +186,8 @@
                                        <a class="dropdown-item" href="profile">My Profile</a>
                                        <a class="dropdown-item" href="settings">Settings</a>
                                        <a class="dropdown-item" href="help">Help</a>
-                                       <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+
+                                       <a class="dropdown-item" href="logout"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
                               </ul>
