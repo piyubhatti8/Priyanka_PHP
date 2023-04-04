@@ -1,5 +1,5 @@
 <?php
-include_once('../admin/model.php'); // step 1
+include_once('model.php'); // step 1
 
 class control extends model   // step 2
 {
@@ -12,9 +12,7 @@ class control extends model   // step 2
 		
 		switch($url)
 		{
-			case '/index':
-                include_once('index.php');
-                break;
+			
             case '/signup':
                 if(isset($_REQUEST['submit']))
                 {
@@ -72,7 +70,7 @@ class control extends model   // step 2
                             $_SESSION['name'] = $fetch->name;
                             echo "<script>
                             alert('Login Success');
-                            window.location='index';
+                            window.location='profile';
                             echo </script>";
                         } 
                         else {
@@ -103,7 +101,7 @@ class control extends model   // step 2
                     unset ($_SESSION['name']);
                 echo "<script>
                     alert('You have been logged out..');
-                    window.location='index';
+                    window.location='login';
                     </script>";
                     break;
             case '/profile':
@@ -180,59 +178,7 @@ class control extends model   // step 2
             
                 include_once('edituser.php');
                 break;        
-                case '/feedback':
-                  if(isset($_REQUEST['submit'])){
-                    $uid = $_SESSION['uid'];
-                    $feed_des = $_REQUEST['feed_des'];
-                    $data=array("uid"=>$uid,"feed_des"=>$feed_des);
-                    $res = $this->insert('feedback_tbl',$data);
-                    if($res){
-                        echo "<script>
-                        alert('Thank You...Your feedback has been sent');
-                        window.location=index;
-                        </script>";
-                    }
-                    else {
-                        echo "<script>
-                        alert('Feedback has not been sent...');
-                        </script>";
-                    }
-                  }
-                    include_once('feedback.php');
-                    break;
-                case '/add_adv':
-                    include_once('add_adv.php');
-                    break;
-           
-           /* case '/':
-                include_once('.php');
-                break;
-                     
-             */
-			 case '/about':
-                include_once('about.php');
-                break;
-			 case '/booking':
-                include_once('booking.php');
-                break;
-			case '/contact':
-                include_once('contact.php');
-                break;
-			case '/detail':
-                include_once('detail.php');
-                break;
-			case '/service':
-                include_once('service.php');
-                break;
-			case '/team':
-                include_once('team.php');
-                break;
-			case '/testimonial':
-                include_once('testimonial.php');
-                break;
-			case '/bike':
-                include_once('bike.php');
-                break;
+               
 		
             }
     }
